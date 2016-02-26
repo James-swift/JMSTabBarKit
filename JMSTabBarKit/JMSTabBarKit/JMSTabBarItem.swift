@@ -9,23 +9,23 @@
 import Foundation
 
 public class JMSTabBarItem {
-    public var title:String = "";
+    public var title:String               = "";
     public var controllerClass:AnyClass?;
-    public var selectedImageName:String = "";
+    public var selectedImageName:String   = "";
     public var unSelectedImageName:String = "";
-    public var selected:Bool = false;
-    public var loginStateControl:Bool = false;
+    public var selected:Bool              = false;
+    public var loginStateControl:Bool     = false;
     
     public init() {
 
     }
 
     public init(tTitle:String,tControllerClass:AnyClass,tSelectedImageName:String,tUnSelectedImageName:String,tSelected:Bool,tLoginStateControl:Bool) {
-        title = tTitle;
-        controllerClass = tControllerClass;
-        selectedImageName = tSelectedImageName;
+        title               = tTitle;
+        controllerClass     = tControllerClass;
+        selectedImageName   = tSelectedImageName;
         unSelectedImageName = tUnSelectedImageName;
-        selected = tSelected;
-        loginStateControl = tLoginStateControl;
+        selected            = tSelected;
+        loginStateControl   = tLoginStateControl;
     }
 }

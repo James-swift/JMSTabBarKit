@@ -57,23 +57,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var loginState                  = false;
 
         if (i == 0) {
-            title                       = "首页";
+            title                       = "Tab1";
             controllerClass             = FirstViewController.self;
             selectedImageName           = "Tab_Main_Highlight";
             unSelectedImageName         = "Tab_Main_Normal";
             selected                    = true;
         }else if (i == 1) {
-            title                       = "客服";
+            title                       = "Tab2";
             controllerClass             = SecondViewController.self;
             selectedImageName           = "Tab_Assistant_Highlight";
             unSelectedImageName         = "Tab_Assistant_Normal";
         }else if (i == 2) {
-            title                       = "日记";
+            title                       = "Tab3";
             controllerClass             = ThirdViewController.self;
             selectedImageName           = "Tab_Diary_Highlight";
             unSelectedImageName         = "Tab_Diary_Normal";
         }else if (i == 3) {
-            title                       = "我的";
+            title                       = "Tab4";
             controllerClass             = FourthViewController.self;
             selectedImageName           = "Tab_Mine_Highlight";
             unSelectedImageName         = "Tab_Mine_Normal";

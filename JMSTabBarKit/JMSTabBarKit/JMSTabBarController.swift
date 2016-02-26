@@ -10,12 +10,18 @@ import Foundation
 
 public typealias JMTabBarLoginStateControl = (UIViewController) -> Void
 
-private let JMS_Tag_Origin = 1000;
+private let JMS_Tag_Origin                 = 1000;
 
 public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
-    // Public
+    // MARK: - Public Properties
+    /**
+     * 登录状态控制
+     */
     public var tabBarLoginStateControl:JMTabBarLoginStateControl?;
     
+    /**
+     * tabBar数据
+     */
     public var tabBarArray:Array<JMSTabBarItem> {
         set {
             _tabBarArray = newValue;
@@ -26,6 +32,9 @@ public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
         }
     }
     
+    /**
+     * tabBar项选中状态下的样式
+     */
     public var tabBarSelectedTextAttributesDic:Dictionary<String,AnyObject> {
         set {
             _tabBarSelectedTextAttributesDic = newValue;
@@ -36,6 +45,9 @@ public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
         }
     }
     
+    /**
+     * tabBar项未选中状态下的样式
+     */
     public var tabBarUnSelectedTextAttributesDic:Dictionary<String,AnyObject> {
         set {
             _tabBarUnSelectedTextAttributesDic = newValue;
@@ -46,8 +58,8 @@ public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
         }
     }
     
-    // Private
-    private var _tabBarArray:Array<JMSTabBarItem> = [];
+    // MARK: - Private Properties
+    private var _tabBarArray:Array<JMSTabBarItem>               = [];
     private var _tabBarSelectedTextAttributesDic:Dictionary<String,AnyObject>;
     private var _tabBarUnSelectedTextAttributesDic:Dictionary<String,AnyObject>;
     private var _loginStateControlArray:Array<UIViewController> = [];
@@ -56,6 +68,10 @@ public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
         fatalError("init(coder:) has not been implemented");
     }
     
+    // MARK: - Self
+    /**
+     * 初始化JMSTabBar
+     */
     public init(tabBarArray:Array<JMSTabBarItem>,tabBarSelectedTextAttributes:Dictionary<String,AnyObject>,tabBarUnSelectedTextAttributes:Dictionary<String,AnyObject>) {
         _tabBarArray                       = tabBarArray;
         _tabBarSelectedTextAttributesDic   = tabBarSelectedTextAttributes;
@@ -75,11 +91,11 @@ public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
             for(var i = 0; i < count; i++) {
                 let item = self.tabBarArray[i];
                 if item.controllerClass is UIViewController.Type {
-                    let viewController = item.controllerClass as! UIViewController.Type;
-                    
-                    let navVC = UINavigationController.init(rootViewController: viewController.init());
-                    navVC.tabBarItem = UITabBarItem.init(title: item.title, image: UIImage(named: item.unSelectedImageName),tag:JMS_Tag_Origin + i);
-                    navVC.tabBarItem.image = UIImage(named: item.unSelectedImageName);
+                    let viewController             = item.controllerClass as! UIViewController.Type;
+
+                    let navVC                      = UINavigationController.init(rootViewController: viewController.init());
+                    navVC.tabBarItem               = UITabBarItem.init(title: item.title, image: UIImage(named: item.unSelectedImageName),tag:JMS_Tag_Origin + i);
+                    navVC.tabBarItem.image         = UIImage(named: item.unSelectedImageName);
                     navVC.tabBarItem.selectedImage = UIImage(named: item.selectedImageName);
                     
                     navVC.tabBarItem.selectedImage = navVC.tabBarItem.selectedImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal);

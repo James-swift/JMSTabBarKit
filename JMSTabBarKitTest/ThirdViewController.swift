@@ -14,7 +14,7 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title                = "日记"
+        self.title                = "Tab3"
         self.view.backgroundColor = UIColor.blueColor()
     }
 

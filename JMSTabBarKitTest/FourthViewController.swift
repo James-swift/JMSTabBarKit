@@ -13,8 +13,8 @@ class FourthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.title                = "我的"
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.title                = "Tab4"
+        self.view.backgroundColor = UIColor.blackColor()
     }
 
     override func didReceiveMemoryWarning() {

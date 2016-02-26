@@ -14,7 +14,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title                = "客服"
+        self.title                = "Tab2"
         self.view.backgroundColor = UIColor.greenColor()
     }
 

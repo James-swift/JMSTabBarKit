@@ -12,7 +12,6 @@
 		1A0521F21C7063410028B2DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0521F01C7063410028B2DE /* Main.storyboard */; };
 		1A0521F41C7063410028B2DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0521F31C7063410028B2DE /* Assets.xcassets */; };
 		1A0521F71C7063410028B2DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0521F51C7063410028B2DE /* LaunchScreen.storyboard */; };
-		1A0522381C7075870028B2DE /* JMSTabBarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0522331C706DB70028B2DE /* JMSTabBarKit.framework */; };
 		1A12C82C1C71CA9E00C017B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A12C82B1C71CA9E00C017B2 /* FirstViewController.swift */; };
 		1A12C82E1C71E1D500C017B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A12C82D1C71E1D500C017B2 /* LoginViewController.swift */; };
 		1A16644E1C7804E500D5151B /* Tab_Assistant_Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A16643E1C7804E500D5151B /* Tab_Assistant_Highlight.png */; };
@@ -33,6 +32,8 @@
 		1A16645D1C7804E500D5151B /* Tab_Diary_Normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A16644D1C7804E500D5151B /* Tab_Diary_Normal@2x.png */; };
 		1A1664611C78078000D5151B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1664601C78078000D5151B /* SecondViewController.swift */; };
 		1A1664631C78079000D5151B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1664621C78079000D5151B /* ThirdViewController.swift */; };
+		1A71E08F1C804B3D00E992F2 /* JMSTabBarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0522331C706DB70028B2DE /* JMSTabBarKit.framework */; };
+		1A71E0901C804B3D00E992F2 /* JMSTabBarKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0522331C706DB70028B2DE /* JMSTabBarKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,28 @@
 			remoteGlobalIDString = 1A4BAE841C70323000CA27D6;
 			remoteInfo = JMSTabBarKit;
 		};
+		1A71E0911C804B3D00E992F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A05222D1C706DB70028B2DE /* JMSTabBarKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A4BAE831C70323000CA27D6;
+			remoteInfo = JMSTabBarKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A71E0931C804B3D00E992F2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A71E0901C804B3D00E992F2 /* JMSTabBarKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A0521E91C7063410028B2DE /* JMSTabBarKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMSTabBarKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A0522381C7075870028B2DE /* JMSTabBarKit.framework in Frameworks */,
+				1A71E08F1C804B3D00E992F2 /* JMSTabBarKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +194,12 @@
 				1A0521E51C7063410028B2DE /* Sources */,
 				1A0521E61C7063410028B2DE /* Frameworks */,
 				1A0521E71C7063410028B2DE /* Resources */,
+				1A71E0931C804B3D00E992F2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1A71E0921C804B3D00E992F2 /* PBXTargetDependency */,
 			);
 			name = JMSTabBarKitTest;
 			productName = JMSTabBarKitTest;
@@ -275,6 +299,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A71E0921C804B3D00E992F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JMSTabBarKit;
+			targetProxy = 1A71E0911C804B3D00E992F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1A0521F01C7063410028B2DE /* Main.storyboard */ = {
@@ -383,11 +415,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hu Yi (97EAP2ZUM4)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = JMSTabBarKitTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = James.JMSTabBarKitTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "054b633c-c9b0-4bd6-9f38-a30c55a932dd";
 			};
 			name = Debug;
 		};
@@ -395,11 +430,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hu Yi (97EAP2ZUM4)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = JMSTabBarKitTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = James.JMSTabBarKitTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xp.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "054b633c-c9b0-4bd6-9f38-a30c55a932dd";
 			};
 			name = Release;
 		};

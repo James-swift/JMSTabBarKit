@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.yellowColor();
         
+        self.setupViews();
+        
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self
             , action: "close")
         self.view.addGestureRecognizer(tap)
@@ -30,6 +32,17 @@ class LoginViewController: UIViewController {
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }
+    }
+    
+    func setupViews() {
+        let rect            = CGRect(origin: CGPoint(x: 50, y: 100), size: CGSize(width: 100, height: 50));
+        let label           = UILabel(frame: rect);
+        label.text          = "请先登录";
+        label.textColor     = UIColor.blackColor();
+        label.textAlignment = NSTextAlignment.Center;
+        label.center.x      = self.view.center.x;
+
+        self.view.addSubview(label);
     }
 
     /*

@@ -353,6 +353,7 @@
 				1A1663A41C77128A00D5151B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A4BAE7E1C70323000CA27D6 /* Build configuration list for PBXProject "JMSTabBarKit" */ = {
 			isa = XCConfigurationList;

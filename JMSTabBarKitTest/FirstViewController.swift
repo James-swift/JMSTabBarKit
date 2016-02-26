@@ -14,7 +14,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title                = "首页"
+        self.title                = "Tab1"
         self.view.backgroundColor = UIColor.redColor()
     }
 
