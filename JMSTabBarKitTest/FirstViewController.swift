@@ -16,6 +16,16 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title                = "Tab1"
         self.view.backgroundColor = UIColor.redColor()
+        
+        let btn:UIButton = UIButton.init(type: UIButtonType.System)
+        btn.frame        = CGRectMake(100, 100, 60, 60)
+        btn.setTitle("跳转", forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        btn.backgroundColor = UIColor.blueColor()
+        
+        btn.addTarget(self, action: #selector(FirstViewController.handleBtnAction), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(btn)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +33,10 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func handleBtnAction() {
+        let delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        delegate.tabBar?.setTabBarSelectedIndex(2)
+    }
     /*
     // MARK: - Navigation
 

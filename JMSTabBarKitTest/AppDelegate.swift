@@ -13,7 +13,9 @@ import JMSTabBarKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var tabBar:JMSTabBarController?
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -47,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private
     func setupTabBar() {
         var tabBarArray:Array<JMSTabBarItem> = [];
-        for(var i = 0;i < 4; i++) {
+        for i in 0 ..< 4 {
         let item:JMSTabBarItem          = JMSTabBarItem();
         var title                       = "";
             var controllerClass:AnyClass?;
@@ -92,9 +94,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let selectedStyleDic            = [NSFontAttributeName:UIFont.systemFontOfSize(12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 255.0/255.0, green: 73.0/255.0, blue: 0.0/255.0, alpha: 1.0)];
         let unSelectedStyleDic          = [NSFontAttributeName:UIFont.systemFontOfSize(12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 74.0/255.0, green: 74.0/255.0, blue: 74.0/255.0, alpha: 1.0)];
 
-        let tabBar:JMSTabBarController  = JMSTabBarController(tabBarArray: tabBarArray, tabBarSelectedTextAttributes: selectedStyleDic, tabBarUnSelectedTextAttributes: unSelectedStyleDic);
+        self.tabBar  = JMSTabBarController(tabBarArray: tabBarArray, tabBarSelectedTextAttributes: selectedStyleDic, tabBarUnSelectedTextAttributes: unSelectedStyleDic);
 
-        tabBar.tabBarLoginStateControl  = { (viewController:UIViewController) -> () in
+        self.tabBar!.tabBarLoginStateControl  = { (viewController:UIViewController) -> () in
         let loginVC:LoginViewController = LoginViewController();
             viewController.presentViewController(loginVC, animated: true, completion: { () -> Void in
 

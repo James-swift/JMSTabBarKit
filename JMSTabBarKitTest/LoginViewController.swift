@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
         self.setupViews();
         
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self
-            , action: "close")
+            , action: #selector(LoginViewController.close))
         self.view.addGestureRecognizer(tap)
     }
 

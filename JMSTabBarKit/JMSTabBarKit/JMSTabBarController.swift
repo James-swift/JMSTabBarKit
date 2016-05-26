@@ -58,12 +58,32 @@ public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
         }
     }
     
+    /**
+     切换Tab
+     
+     - parameter selectedIndex: 下标
+     */
+    public func setTabBarSelectedIndex(selectedIndex:Int) -> UIViewController? {
+        var selectedVC:UIViewController?;
+        
+        if (selectedIndex > 0 && selectedIndex < _tabBarArray.count) {
+            self.selectedIndex = selectedIndex;
+            
+            selectedVC  = self.viewControllers![selectedIndex];
+            
+            self.tabBarController(self, shouldSelectViewController: selectedVC!);
+        }
+        
+        return selectedVC;
+    }
+    
     // MARK: - Private Properties
     private var _tabBarArray:Array<JMSTabBarItem>               = [];
     private var _tabBarSelectedTextAttributesDic:Dictionary<String,AnyObject>;
     private var _tabBarUnSelectedTextAttributesDic:Dictionary<String,AnyObject>;
     private var _loginStateControlArray:Array<UIViewController> = [];
-    
+    private var _tabBarSelectedIndex:Array<UIViewController> = [];
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented");
     }
@@ -88,7 +108,8 @@ public class JMSTabBarController:UITabBarController,UITabBarControllerDelegate {
         if (self.tabBarArray.count != 0) {
             let count = self.tabBarArray.count;
             var viewControllerArray:Array<UIViewController> = [];
-            for(var i = 0; i < count; i++) {
+            
+            for i in 0..<count {
                 let item = self.tabBarArray[i];
                 if item.controllerClass is UIViewController.Type {
                     let viewController             = item.controllerClass as! UIViewController.Type;
