@@ -14,9 +14,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.yellowColor();
+        self.view.backgroundColor = UIColor.white
         
-        self.setupViews();
+        self.setupViews()
         
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self
             , action: #selector(LoginViewController.close))
@@ -29,20 +29,20 @@ class LoginViewController: UIViewController {
     }
     
     func close() {
-        self.dismissViewControllerAnimated(true) { () -> Void in
+        self.dismiss(animated: true) { () -> Void in
             
         }
     }
     
     func setupViews() {
-        let rect            = CGRect(origin: CGPoint(x: 50, y: 100), size: CGSize(width: 100, height: 50));
-        let label           = UILabel(frame: rect);
-        label.text          = "请先登录";
-        label.textColor     = UIColor.blackColor();
-        label.textAlignment = NSTextAlignment.Center;
-        label.center.x      = self.view.center.x;
+        let rect            = CGRect(origin: CGPoint(x: 50, y: 100), size: CGSize(width: 100, height: 50))
+        let label           = UILabel(frame: rect)
+        label.text          = "请先登录"
+        label.textColor     = UIColor.black
+        label.textAlignment = NSTextAlignment.center
+        label.center.x      = self.view.center.x
 
-        self.view.addSubview(label);
+        self.view.addSubview(label)
     }
 
     /*

@@ -14,8 +14,8 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title                = "Tab2"
-        self.view.backgroundColor = UIColor.greenColor()
+        self.title                = "添加"
+        self.view.backgroundColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {

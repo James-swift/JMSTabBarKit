@@ -14,8 +14,8 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title                = "Tab3"
-        self.view.backgroundColor = UIColor.blueColor()
+        self.title                = "我的"
+        self.view.backgroundColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {

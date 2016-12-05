@@ -17,92 +17,88 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabBar:JMSTabBarController?
     
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.setupTabBar();
+        self.setupTabBar()
         
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Called as part of the transition from the background to the inactive state here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
     // MARK: - Private
     func setupTabBar() {
-        var tabBarArray:Array<JMSTabBarItem> = [];
-        for i in 0 ..< 4 {
-        let item:JMSTabBarItem          = JMSTabBarItem();
-        var title                       = "";
-            var controllerClass:AnyClass?;
-        var selectedImageName           = "";
-        var unSelectedImageName         = "";
-        var selected                    = false;
-        var loginState                  = false;
+        var tabBarArray:Array<JMSTabBarItem> = []
+        for i in 0 ..< 3 {
+        var title                       = ""
+            var controllerClass:AnyClass?
+        var selectedImageName           = ""
+        var unSelectedImageName         = ""
+        var selected                    = false
 
         if (i == 0) {
-            title                       = "Tab1";
-            controllerClass             = FirstViewController.self;
-            selectedImageName           = "Tab_Main_Highlight";
-            unSelectedImageName         = "Tab_Main_Normal";
-            selected                    = true;
+            title                       = "主页"
+            controllerClass             = FirstViewController.self
+            selectedImageName           = "Tab_Main_Selected"
+            unSelectedImageName         = "Tab_Main_UnSelected"
+            selected                    = true
         }else if (i == 1) {
-            title                       = "Tab2";
-            controllerClass             = SecondViewController.self;
-            selectedImageName           = "Tab_Assistant_Highlight";
-            unSelectedImageName         = "Tab_Assistant_Normal";
+            title                       = "添加"
+            controllerClass             = SecondViewController.self
+            selectedImageName           = "Tab_Center_Selected"
+            unSelectedImageName         = "Tab_Center_UnSelected"
         }else if (i == 2) {
-            title                       = "Tab3";
-            controllerClass             = ThirdViewController.self;
-            selectedImageName           = "Tab_Diary_Highlight";
-            unSelectedImageName         = "Tab_Diary_Normal";
-        }else if (i == 3) {
-            title                       = "Tab4";
-            controllerClass             = FourthViewController.self;
-            selectedImageName           = "Tab_Mine_Highlight";
-            unSelectedImageName         = "Tab_Mine_Normal";
-            loginState                  = true;
+            title                       = "我的"
+            controllerClass             = ThirdViewController.self
+            selectedImageName           = "Tab_Mine_Selected"
+            unSelectedImageName         = "Tab_Mine_UnSelected"
         }
-            item.title                  = title;
-            item.controllerClass        = controllerClass ;
-            item.selectedImageName      = selectedImageName;
-            item.unSelectedImageName    = unSelectedImageName;
-            item.selected               = selected;
-            item.loginStateControl      = loginState;
+            
+            let item: JMSTabBarItem = JMSTabBarItem.init(tTitle: title, tControllerClass: controllerClass!, tSelectedImageName: selectedImageName, tUnSelectedImageName: unSelectedImageName, tSelected: selected)
 
-            tabBarArray.append(item);
+            tabBarArray.append(item)
         }
 
-        let selectedStyleDic            = [NSFontAttributeName:UIFont.systemFontOfSize(12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 255.0/255.0, green: 73.0/255.0, blue: 0.0/255.0, alpha: 1.0)];
-        let unSelectedStyleDic          = [NSFontAttributeName:UIFont.systemFontOfSize(12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 74.0/255.0, green: 74.0/255.0, blue: 74.0/255.0, alpha: 1.0)];
+        let selectedStyleDic            = [NSFontAttributeName:UIFont.systemFont(ofSize: 12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 0.0/255.0, green: 152.0/255.0, blue: 0.0/255.0, alpha: 1.0)]
+        let unSelectedStyleDic          = [NSFontAttributeName:UIFont.systemFont(ofSize: 12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)]
 
-        self.tabBar  = JMSTabBarController(tabBarArray: tabBarArray, tabBarSelectedTextAttributes: selectedStyleDic, tabBarUnSelectedTextAttributes: unSelectedStyleDic);
+        self.tabBar  = JMSTabBarController(tabBarArray: tabBarArray, tabBarSelectedTextAttributes: selectedStyleDic, tabBarUnSelectedTextAttributes: unSelectedStyleDic)
 
-        self.tabBar!.tabBarLoginStateControl  = { (viewController:UIViewController) -> () in
-        let loginVC:LoginViewController = LoginViewController();
-            viewController.presentViewController(loginVC, animated: true, completion: { () -> Void in
-
-            });
-        };
-        self.window?.rootViewController = tabBar;
+        self.tabBar!.tabBarShouldSelectBlock  = { (viewController:UIViewController, shouldSelectedIndex) -> (Bool) in
+            if (shouldSelectedIndex == 2) {
+                let loginVC:LoginViewController = LoginViewController()
+                viewController.present(loginVC, animated: true, completion: { () -> Void in
+                    
+                })
+                
+                return false
+            }
+            
+            return true
+        }
+                
+        self.window?.rootViewController = tabBar
     }
+    
 }
 

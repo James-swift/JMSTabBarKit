@@ -14,16 +14,16 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title                = "Tab1"
-        self.view.backgroundColor = UIColor.redColor()
+        self.title                = "主页"
+        self.view.backgroundColor = UIColor.white
         
-        let btn:UIButton = UIButton.init(type: UIButtonType.System)
-        btn.frame        = CGRectMake(100, 100, 60, 60)
-        btn.setTitle("跳转", forState: UIControlState.Normal)
-        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        btn.backgroundColor = UIColor.blueColor()
+        let btn:UIButton = UIButton.init(type: UIButtonType.system)
+        btn.frame        = CGRect(x: 100, y: 100, width: 60, height: 60)
+        btn.setTitle("跳转", for: UIControlState())
+        btn.setTitleColor(UIColor.white, for: UIControlState())
+        btn.backgroundColor = UIColor.blue
         
-        btn.addTarget(self, action: #selector(FirstViewController.handleBtnAction), forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(FirstViewController.handleBtnAction), for: UIControlEvents.touchUpInside)
         
         self.view.addSubview(btn)
     }
@@ -34,8 +34,8 @@ class FirstViewController: UIViewController {
     }
     
     func handleBtnAction() {
-        let delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
-        delegate.tabBar?.setTabBarSelectedIndex(2)
+        let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        _ = delegate.tabBar?.setTabBarSelectedIndex(2)
     }
     /*
     // MARK: - Navigation
