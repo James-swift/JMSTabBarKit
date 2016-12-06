@@ -13,11 +13,11 @@ public typealias JMTabBarShouldSelectBlock = (UIViewController, Int) -> Bool
 
 private let JMS_Tag_Origin                 = 1000
 
-open class JMSTabBarController: UITabBarController,UITabBarControllerDelegate {
+public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate {
     
     // MARK: - Public Properties
     // 控制TabBarItem能不能选中(可用于如登录控制等)
-    open var tabBarShouldSelectBlock: JMTabBarShouldSelectBlock?
+    public var tabBarShouldSelectBlock: JMTabBarShouldSelectBlock?
     
     // tabBar数据
     private(set) var tabBarArray: Array<JMSTabBarItem>?
@@ -36,7 +36,7 @@ open class JMSTabBarController: UITabBarController,UITabBarControllerDelegate {
     /// - Parameters:
     ///     - selectedIndex: 选中TabBarItem下标
     /// - Returns: 返回制定下标对应的UIViewController
-    open func setTabBarSelectedIndex(_ selectedIndex: Int) -> UIViewController? {
+    public func setTabBarSelectedIndex(_ selectedIndex: Int) -> UIViewController? {
         var selectedVC: UIViewController?
         
         if (selectedIndex > 0 && selectedIndex < (self.tabBarArray?.count)!) {
@@ -70,7 +70,7 @@ open class JMSTabBarController: UITabBarController,UITabBarControllerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
     }
     
@@ -110,7 +110,7 @@ open class JMSTabBarController: UITabBarController,UITabBarControllerDelegate {
     }
     
     // MARK: - UITabBarControllerDelegate
-    open func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         var shouldSelect = true
         
         if (self.tabBarShouldSelectBlock != nil) {

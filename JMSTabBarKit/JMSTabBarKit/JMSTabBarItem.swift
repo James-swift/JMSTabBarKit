@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class JMSTabBarItem {
+public class JMSTabBarItem {
     
     private(set) var title:String               = ""
     private(set) var controllerClass:AnyClass?
