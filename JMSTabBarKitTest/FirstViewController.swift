@@ -18,11 +18,8 @@ class FirstViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         let btn:UIButton = UIButton.init(type: UIButtonType.system)
-        btn.frame        = CGRect(x: 100, y: 100, width: 60, height: 60)
-        btn.setTitle("跳转", for: UIControlState())
-        btn.setTitleColor(UIColor.white, for: UIControlState())
-        btn.backgroundColor = UIColor.blue
-        
+        btn.frame        = CGRect(x: 50, y: 100, width: 100, height: 90)
+        btn.setTitle("切换", for: UIControlState())
         btn.addTarget(self, action: #selector(FirstViewController.handleBtnAction), for: UIControlEvents.touchUpInside)
         
         self.view.addSubview(btn)
@@ -35,7 +32,7 @@ class FirstViewController: UIViewController {
     
     func handleBtnAction() {
         let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        _ = delegate.tabBar?.setTabBarSelectedIndex(2)
+        _ = delegate.tabBar?.setTabBarSelectedIndex(1)
     }
     /*
     // MARK: - Navigation
