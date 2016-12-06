@@ -34,7 +34,7 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
     ///
     /// - Parameters:
     ///     - selectedIndex: 选中TabBarItem下标
-    /// - Returns: 返回制定下标对应的UIViewController
+    /// - Returns: 返回指定下标对应的UIViewController
     public func setTabBarSelectedIndex(_ selectedIndex: Int) -> UIViewController? {
         var selectedVC: UIViewController?
         
