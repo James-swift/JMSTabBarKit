@@ -24,6 +24,8 @@
 		1A1663E71C771A4F00D5151B /* JMSTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1663E61C771A4F00D5151B /* JMSTabBarItem.swift */; };
 		1A1663E91C771A5300D5151B /* JMSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1663E81C771A5300D5151B /* JMSTabBarController.swift */; };
 		1A4BAE881C70323000CA27D6 /* JMSTabBarKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A4BAE871C70323000CA27D6 /* JMSTabBarKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1ACA6B1A1DF6BADF006F876D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACA6B191DF6BADF006F876D /* Foundation.framework */; };
+		1ACA6B1C1DF6BAE3006F876D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACA6B1B1DF6BAE3006F876D /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1A4BAE841C70323000CA27D6 /* JMSTabBarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JMSTabBarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4BAE871C70323000CA27D6 /* JMSTabBarKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSTabBarKit.h; sourceTree = "<group>"; };
 		1A4BAE891C70323000CA27D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ACA6B191DF6BADF006F876D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1ACA6B1B1DF6BAE3006F876D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ACA6B1C1DF6BAE3006F876D /* UIKit.framework in Frameworks */,
+				1ACA6B1A1DF6BADF006F876D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,7 @@
 			children = (
 				1A4BAE861C70323000CA27D6 /* JMSTabBarKit */,
 				1A4BAE851C70323000CA27D6 /* Products */,
+				1ACA6B181DF6BADE006F876D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +93,15 @@
 				1A4BAE891C70323000CA27D6 /* Info.plist */,
 			);
 			path = JMSTabBarKit;
+			sourceTree = "<group>";
+		};
+		1ACA6B181DF6BADE006F876D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA6B1B1DF6BAE3006F876D /* UIKit.framework */,
+				1ACA6B191DF6BADF006F876D /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
