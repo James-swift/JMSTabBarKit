@@ -38,7 +38,7 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
     public func setTabBarSelectedIndex(_ selectedIndex: Int) -> UIViewController? {
         var selectedVC: UIViewController?
         
-        if (selectedIndex > 0 && selectedIndex < (self.tabBarArray?.count)!) {
+        if (selectedIndex >= 0 && selectedIndex < (self.tabBarArray?.count)!) {
             self.selectedIndex = selectedIndex
             
             selectedVC  = self.viewControllers![selectedIndex]

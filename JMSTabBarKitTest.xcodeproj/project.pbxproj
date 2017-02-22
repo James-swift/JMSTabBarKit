@@ -136,6 +136,7 @@
 				1A0521E61C7063410028B2DE /* Frameworks */,
 				1A0521E71C7063410028B2DE /* Resources */,
 				1A71E0931C804B3D00E992F2 /* Embed Frameworks */,
+				1A3FDDA21DFFE33C00DDA1F1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -209,6 +210,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A3FDDA21DFFE33C00DDA1F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\nxcodebuild clean\nxcodebuild | tee xcodebuild.log\noclint-xcodebuild\noclint-json-compilation-database \\\n-e Vendor \\\n-e Pods \\\n-- \\\n-max-priority-1 100000 \\\n-max-priority-2 100000 \\\n-max-priority-3 100000 \\\n-report-type html \\\n-o oclintReport.html \\";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A0521E51C7063410028B2DE /* Sources */ = {
