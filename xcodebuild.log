@@ -1,8 +1,0 @@
-Build settings from command line:
-    TOOLCHAINS = com.apple.dt.toolchain.XcodeDefault
-
-=== BUILD TARGET JMSTabBarKitTest OF PROJECT JMSTabBarKitTest WITH THE DEFAULT CONFIGURATION (Release) ===
-
-Check dependencies
-No iOS profile matching '054b633c-c9b0-4bd6-9f38-a30c55a932dd' found:  Xcode couldn't find a profile matching '054b633c-c9b0-4bd6-9f38-a30c55a932dd'. Install the profile (by dragging and dropping it onto Xcode's dock item) or select a different one in the General tab of the target editor.
-
