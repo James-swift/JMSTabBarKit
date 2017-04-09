@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public typealias JMTabBarShouldSelectBlock = (UIViewController, Int) -> Bool
 
@@ -80,27 +81,34 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
             
             for i in 0..<count {
                 let item = self.tabBarArray![i]
-                if item.controllerClass is UIViewController.Type {
-                    let viewController             = item.controllerClass as! UIViewController.Type
-
-                    let navVC                      = UINavigationController.init(rootViewController: viewController.init())
-                    navVC.tabBarItem               = UITabBarItem.init(title: item.title, image: UIImage(named: item.unSelectedImageName),tag:JMS_Tag_Origin + i)
-                    navVC.tabBarItem.image         = UIImage(named: item.unSelectedImageName)
-                    navVC.tabBarItem.selectedImage = UIImage(named: item.selectedImageName)
-                    
-                    navVC.tabBarItem.image = navVC.tabBarItem.image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-
-                    navVC.tabBarItem.selectedImage = navVC.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-                    
-                    if (item.selected) {
-                        navVC.tabBarItem.setTitleTextAttributes(self.tabBarSelectedTextAttributesDic, for: UIControlState())
-                        self.selectedIndex = i
-                    }else {
-                        navVC.tabBarItem.setTitleTextAttributes(self.tabBarUnSelectedTextAttributesDic, for: UIControlState())
-                    }
-                    
-                    viewControllerArray.append(navVC)
+                
+                guard item.controller != nil else {
+                    continue
                 }
+                
+                var navVC: UINavigationController
+                if let tempVC = item.controller as? UINavigationController {
+                    navVC = tempVC
+                }else {
+                    navVC = UINavigationController.init(rootViewController: item.controller!)
+                }
+                    
+                navVC.tabBarItem               = UITabBarItem.init(title: item.title, image: UIImage(named: item.unSelectedImageName),tag:JMS_Tag_Origin + i)
+                navVC.tabBarItem.image         = UIImage(named: item.unSelectedImageName)
+                navVC.tabBarItem.selectedImage = UIImage(named: item.selectedImageName)
+                
+                navVC.tabBarItem.image = navVC.tabBarItem.image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+
+                navVC.tabBarItem.selectedImage = navVC.tabBarItem.selectedImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                
+                if (item.selected) {
+                    navVC.tabBarItem.setTitleTextAttributes(self.tabBarSelectedTextAttributesDic, for: UIControlState())
+                    self.selectedIndex = i
+                }else {
+                    navVC.tabBarItem.setTitleTextAttributes(self.tabBarUnSelectedTextAttributesDic, for: UIControlState())
+                }
+                
+                viewControllerArray.append(navVC)
             }
             
             self.viewControllers = viewControllerArray

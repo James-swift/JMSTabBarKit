@@ -15,26 +15,9 @@
 		1A12C82E1C71E1D500C017B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A12C82D1C71E1D500C017B2 /* LoginViewController.swift */; };
 		1A1664611C78078000D5151B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1664601C78078000D5151B /* SecondViewController.swift */; };
 		1A1664631C78079000D5151B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1664621C78079000D5151B /* ThirdViewController.swift */; };
-		1A71E08F1C804B3D00E992F2 /* JMSTabBarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0522331C706DB70028B2DE /* JMSTabBarKit.framework */; };
-		1A71E0901C804B3D00E992F2 /* JMSTabBarKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0522331C706DB70028B2DE /* JMSTabBarKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AEE21311E9A317200425B9D /* JMSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEE212E1E9A317200425B9D /* JMSTabBarController.swift */; };
+		1AEE21321E9A317200425B9D /* JMSTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEE212F1E9A317200425B9D /* JMSTabBarItem.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1A0522321C706DB70028B2DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A05222D1C706DB70028B2DE /* JMSTabBarKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1A4BAE841C70323000CA27D6;
-			remoteInfo = JMSTabBarKit;
-		};
-		1A71E0911C804B3D00E992F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A05222D1C706DB70028B2DE /* JMSTabBarKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A4BAE831C70323000CA27D6;
-			remoteInfo = JMSTabBarKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1A71E0931C804B3D00E992F2 /* Embed Frameworks */ = {
@@ -43,7 +26,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1A71E0901C804B3D00E992F2 /* JMSTabBarKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,11 +39,13 @@
 		1A0521F31C7063410028B2DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A0521F61C7063410028B2DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A0521F81C7063410028B2DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A05222D1C706DB70028B2DE /* JMSTabBarKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = JMSTabBarKit.xcodeproj; sourceTree = "<group>"; };
 		1A12C82B1C71CA9E00C017B2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		1A12C82D1C71E1D500C017B2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1A1664601C78078000D5151B /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1A1664621C78079000D5151B /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		1AEE212E1E9A317200425B9D /* JMSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMSTabBarController.swift; sourceTree = "<group>"; };
+		1AEE212F1E9A317200425B9D /* JMSTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMSTabBarItem.swift; sourceTree = "<group>"; };
+		1AEE21301E9A317200425B9D /* JMSTabBarKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSTabBarKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A71E08F1C804B3D00E992F2 /* JMSTabBarKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,17 +95,11 @@
 		1A0521FE1C7063680028B2DE /* JMSTabBarKit */ = {
 			isa = PBXGroup;
 			children = (
-				1A05222D1C706DB70028B2DE /* JMSTabBarKit.xcodeproj */,
+				1AEE21301E9A317200425B9D /* JMSTabBarKit.h */,
+				1AEE212E1E9A317200425B9D /* JMSTabBarController.swift */,
+				1AEE212F1E9A317200425B9D /* JMSTabBarItem.swift */,
 			);
 			path = JMSTabBarKit;
-			sourceTree = "<group>";
-		};
-		1A05222E1C706DB70028B2DE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1A0522331C706DB70028B2DE /* JMSTabBarKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +118,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1A71E0921C804B3D00E992F2 /* PBXTargetDependency */,
 			);
 			name = JMSTabBarKitTest;
 			productName = JMSTabBarKitTest;
@@ -175,28 +151,12 @@
 			mainGroup = 1A0521E01C7063410028B2DE;
 			productRefGroup = 1A0521EA1C7063410028B2DE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 1A05222E1C706DB70028B2DE /* Products */;
-					ProjectRef = 1A05222D1C706DB70028B2DE /* JMSTabBarKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1A0521E81C7063410028B2DE /* JMSTabBarKitTest */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		1A0522331C706DB70028B2DE /* JMSTabBarKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = JMSTabBarKit.framework;
-			remoteRef = 1A0522321C706DB70028B2DE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1A0521E71C7063410028B2DE /* Resources */ = {
@@ -236,19 +196,13 @@
 				1A12C82C1C71CA9E00C017B2 /* FirstViewController.swift in Sources */,
 				1A1664611C78078000D5151B /* SecondViewController.swift in Sources */,
 				1A1664631C78079000D5151B /* ThirdViewController.swift in Sources */,
+				1AEE21311E9A317200425B9D /* JMSTabBarController.swift in Sources */,
+				1AEE21321E9A317200425B9D /* JMSTabBarItem.swift in Sources */,
 				1A0521ED1C7063410028B2DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1A71E0921C804B3D00E992F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JMSTabBarKit;
-			targetProxy = 1A71E0911C804B3D00E992F2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1A0521F01C7063410028B2DE /* Main.storyboard */ = {

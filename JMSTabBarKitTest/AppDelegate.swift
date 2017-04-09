@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import JMSTabBarKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,30 +50,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var tabBarArray:Array<JMSTabBarItem> = []
         for i in 0 ..< 3 {
         var title                       = ""
-            var controllerClass:AnyClass?
+            var controller: UIViewController?
         var selectedImageName           = ""
         var unSelectedImageName         = ""
         var selected                    = false
 
         if (i == 0) {
             title                       = "主页"
-            controllerClass             = FirstViewController.self
+            controller                  = UINavigationController.init(rootViewController: FirstViewController())
             selectedImageName           = "Tab_Main_Selected"
             unSelectedImageName         = "Tab_Main_UnSelected"
             selected                    = true
         }else if (i == 1) {
             title                       = "添加"
-            controllerClass             = SecondViewController.self
+            controller                  = SecondViewController()
             selectedImageName           = "Tab_Center_Selected"
             unSelectedImageName         = "Tab_Center_UnSelected"
         }else if (i == 2) {
             title                       = "我的"
-            controllerClass             = ThirdViewController.self
+            controller                  = ThirdViewController()
             selectedImageName           = "Tab_Mine_Selected"
             unSelectedImageName         = "Tab_Mine_UnSelected"
         }
             
-            let item: JMSTabBarItem = JMSTabBarItem.init(tTitle: title, tControllerClass: controllerClass!, tSelectedImageName: selectedImageName, tUnSelectedImageName: unSelectedImageName, tSelected: selected)
+            let item: JMSTabBarItem = JMSTabBarItem.init(tTitle: title, tController: controller!, tSelectedImageName: selectedImageName, tUnSelectedImageName: unSelectedImageName, tSelected: selected)
 
             tabBarArray.append(item)
         }
