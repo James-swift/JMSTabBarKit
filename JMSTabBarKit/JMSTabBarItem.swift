@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 public class JMSTabBarItem {
     
-    private(set) var title:String               = ""
-    private(set) var controllerClass:AnyClass?
-    private(set) var selectedImageName:String   = ""
-    private(set) var unSelectedImageName:String = ""
-    private(set) var selected:Bool              = false
-    
+    private(set) var title: String                = ""
+    private(set) var controller: UIViewController?
+    private(set) var selectedImageName: String    = ""
+    private(set) var unSelectedImageName: String  = ""
+    private(set) var selected: Bool               = false
+
     private init() {
 
     }
@@ -29,9 +30,9 @@ public class JMSTabBarItem {
     ///     - tSelectedImageName:   选中的显示图像名称
     ///     - tUnSelectedImageName: 未选中的显示图像名称
     ///     - tSelected:            是否选中
-    public init(tTitle:String, tControllerClass:AnyClass, tSelectedImageName:String, tUnSelectedImageName:String, tSelected:Bool) {
+    public init(tTitle:String, tController:UIViewController, tSelectedImageName:String, tUnSelectedImageName:String, tSelected:Bool) {
         self.title               = tTitle
-        self.controllerClass     = tControllerClass
+        self.controller          = tController
         self.selectedImageName   = tSelectedImageName
         self.unSelectedImageName = tUnSelectedImageName
         self.selected            = tSelected
