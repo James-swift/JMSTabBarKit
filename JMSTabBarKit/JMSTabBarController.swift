@@ -28,6 +28,8 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
     // tabBar项未选中状态下的样式
     private(set) var tabBarUnSelectedTextAttributesDic: Dictionary<String,AnyObject>?
     
+    private var enableShouldSelectedBlk: Bool = true
+    
     //  MARK: 切换Tab
     /// 切换Tab
     ///
@@ -75,6 +77,8 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
     }
     
     private func setupTabBarController() {
+        var selectedIndex: Int = 0
+        
         if (self.tabBarArray != nil) {
             let count = self.tabBarArray!.count
             var viewControllerArray: Array<UIViewController> = []
@@ -103,7 +107,7 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
                 
                 if (item.selected) {
                     navVC.tabBarItem.setTitleTextAttributes(self.tabBarSelectedTextAttributesDic, for: UIControlState())
-                    self.selectedIndex = i
+                    selectedIndex = i
                 }else {
                     navVC.tabBarItem.setTitleTextAttributes(self.tabBarUnSelectedTextAttributesDic, for: UIControlState())
                 }
@@ -113,6 +117,10 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
             
             self.viewControllers = viewControllerArray
             self.delegate        = self
+            
+            self.enableShouldSelectedBlk = false
+            _ = self.setTabBarSelectedIndex(selectedIndex)
+            self.enableShouldSelectedBlk = true
         }
     }
     
@@ -120,7 +128,7 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         var shouldSelect = true
         
-        if (self.tabBarShouldSelectBlock != nil) {
+        if (self.tabBarShouldSelectBlock != nil && self.enableShouldSelectedBlk) {
             let index = self.viewControllers?.index(of: viewController)
             shouldSelect = self.tabBarShouldSelectBlock!(viewController, index!)
         }
