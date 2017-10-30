@@ -13,7 +13,7 @@ public typealias JMTabBarShouldSelectBlock = (UIViewController, Int) -> Bool
 
 private let JMS_Tag_Origin                 = 1000
 
-public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate {
+public class JMSTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Public Properties
     // 控制TabBarItem能不能选中(可用于如登录控制等)
@@ -23,10 +23,10 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
     private(set) var tabBarArray: Array<JMSTabBarItem>?
     
     // tabBar项选中状态下的样式
-    private(set) var tabBarSelectedTextAttributesDic: Dictionary<String,AnyObject>?
+    private(set) var tabBarSelectedTextAttributesDic: [NSAttributedStringKey : Any]?
     
     // tabBar项未选中状态下的样式
-    private(set) var tabBarUnSelectedTextAttributesDic: Dictionary<String,AnyObject>?
+    private(set) var tabBarUnSelectedTextAttributesDic: [NSAttributedStringKey : Any]?
     
     private var enableShouldSelectedBlk: Bool = true
     
@@ -60,7 +60,7 @@ public class JMSTabBarController: UITabBarController,UITabBarControllerDelegate 
     ///     - tabBarArray: tabBarItem数组
     ///     - tabBarSelectedTextAttributes: tabBarItem选中样式
     ///     - tabBarUnSelectedTextAttributes: tabBarItem未选中样式
-    public init(tabBarArray: Array<JMSTabBarItem>,tabBarSelectedTextAttributes: Dictionary<String,AnyObject>,tabBarUnSelectedTextAttributes: Dictionary<String,AnyObject>) {
+    public init(tabBarArray: Array<JMSTabBarItem>, tabBarSelectedTextAttributes: [NSAttributedStringKey : Any], tabBarUnSelectedTextAttributes: [NSAttributedStringKey : Any]) {
         self.tabBarArray                       = tabBarArray
         self.tabBarSelectedTextAttributesDic   = tabBarSelectedTextAttributes
         self.tabBarUnSelectedTextAttributesDic = tabBarUnSelectedTextAttributes

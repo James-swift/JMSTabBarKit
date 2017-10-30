@@ -30,7 +30,7 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func handleBtnAction() {
+    @objc func handleBtnAction() {
         let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         _ = delegate.tabBar?.setTabBarSelectedIndex(1)
     }

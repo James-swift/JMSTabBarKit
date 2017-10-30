@@ -78,8 +78,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBarArray.append(item)
         }
 
-        let selectedStyleDic            = [NSFontAttributeName:UIFont.systemFont(ofSize: 12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 0.0/255.0, green: 152.0/255.0, blue: 0.0/255.0, alpha: 1.0)]
-        let unSelectedStyleDic          = [NSFontAttributeName:UIFont.systemFont(ofSize: 12.0),NSForegroundColorAttributeName:UIColor(colorLiteralRed: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)]
+        
+        let selectedStyleDic            = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12.0), NSAttributedStringKey.foregroundColor: UIColor.init(red: 0.0/255.0, green: 152.0/255.0, blue: 0.0/255.0, alpha: 1.0)]
+        let unSelectedStyleDic          = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12.0), NSAttributedStringKey.foregroundColor: UIColor.init(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)]
 
         self.tabBar  = JMSTabBarController(tabBarArray: tabBarArray, tabBarSelectedTextAttributes: selectedStyleDic, tabBarUnSelectedTextAttributes: unSelectedStyleDic)
 

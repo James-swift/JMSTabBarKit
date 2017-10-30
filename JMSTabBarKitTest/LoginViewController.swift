@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func close() {
+    @objc func close() {
         self.dismiss(animated: true) { () -> Void in
             
         }
