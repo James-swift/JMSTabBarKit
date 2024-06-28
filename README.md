@@ -3,7 +3,7 @@
 ---
 
 ## 效果
-![Alt Text](https://github.com/xiaobs/JMShareSource/raw/master/screenshots/Swift/JMSTabBarKit/JMSTabBarKit.gif)
+![Alt Text](https://github.com/James-oc/JMShareSource/raw/master/screenshots/Swift/JMSTabBarKit/JMSTabBarKit.gif)
 
 ## 安装
 1. 将工程项目中的JMSTabBarKit文件夹拉入自己的工程项目里面；
